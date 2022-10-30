@@ -1,38 +1,139 @@
-.App {
+/* global style */
+h1,
+h2,
+p {
+  font-family: 'Cormorant', serif;
+  color: #fff;
+}
+
+section {
+  width: 95%;
+  margin: auto;
+}
+
+/* Header style */
+.headerCon {
+  width: 100%;
+  height: 50vh;
+  background-image: url('./images/natureWallpaper.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleHeader {
+  font-size: 4rem;
+  font-weight: 500;
+  text-shadow: 2px -2px 7px #000;
+  padding: 0 0.5rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Main styles */
+
+.mainCon {
+  min-height: 50vh;
+  background-color: #000000d9;
+  border-top: 2px solid #ffffff8a;
+  padding-bottom: 1.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.titleMainCon {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2rem 0;
+  border-bottom: 2px solid #ffffff8a;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.noData {
+  text-align: center;
+  line-height: 15;
+  font-size: 2rem;
+}
+
+/* Card styles  */
+.wraperForCards {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1rem;
+  gap: 3rem;
+}
+
+.cardWraper {
+  max-width: 350px;
+  min-width: 300px;
+  width: 100%;
+}
+
+.numberUser {
+  font-weight: bolder;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.card {
+  background-color: grey;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  line-height: 2;
+}
+
+.card > p {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.card > p > span {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+/* footer */
+.footer {
+  height: 5rem;
+  background-color: #000;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.footer > p {
+  font-size: 1.5rem;
+  font-weight: 900;
 }
 
-@keyframes App-logo-spin {
+/* loader-spiner */
+
+.loader {
+  width: 20rem;
+  aspect-ratio: 1;
+  display: grid;
+  margin: 10rem auto;
+  -webkit-mask: conic-gradient(from 22deg, #0003, #000);
+  mask: conic-gradient(from 22deg, #0003, #000);
+  animation: load 1s steps(8) infinite;
+}
+.loader,
+.loader:before {
+  --_g: linear-gradient(#fff 0 0) 50%;
+  background: var(--_g) / 34% 8% space no-repeat,
+    var(--_g) / 8% 34% no-repeat space;
+}
+.loader:before {
+  content: '';
+  transform: rotate(45deg);
+}
+@keyframes load {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0turn);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(1turn);
   }
 }
